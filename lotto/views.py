@@ -5,4 +5,9 @@ def home(request):
     return render(request, "home.html")
 
 def result(request):
-    return render(request, "result.html")
+    number_list = list()
+    for i in range(0,6):
+        number = request.GET['number'+str(i+1)]
+        if number =='':
+            return redirect('home')
+        
